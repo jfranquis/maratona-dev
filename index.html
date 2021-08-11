@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/style.css"> 
+  <link rel="stylesheet" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -24,39 +24,35 @@
 
   <section class="form hide">
     <h2>Entre na lista de doadores</h2>
-    <form action="/">
+    <form action="/" method="POST">
       <input type="text" name="name" placeholder="Nome Completo">
       <input type="text" name="name" placeholder="Email">
       <input type="text" name="name" placeholder="Tipo sanguíneo">
       <button>Quero ajudar!</button>
     </form>
-
   </section>
+
+
 
   <main>
 
     <h2>Últimos <span>doadores</span></h2>
 
-    <div class="doadores">
-      <div class="doador"></div>
-      <div class="sangue">B+</div>
-      <p>Janaina Franquis</p>
-    </div>
+    <section class="doadores">
 
-    <div class="doador"></div>
-    <div class="sangue">O+</div>
-    <p>Índio Malheiros</p>
-    </div>
+      {% for doador in doadores %}
 
-    <div class="doador"></div>
-    <div class="sangue">O-</div>
-    <p>Ana Paula Fernandes</p>
-    </div>
-    <div class="doador"></div>
-    <div class="sangue">A+</div>
-    <p>Ghael Luz</p>
-    </div>
+      
+        <div class="doador"></div>
+            <div class="sangue">{{doador.sangue}}</div>
+            <p>{{doador.name}}</p>
+        </div>
+
+
+      {%endfor %}  
+        
     </section>
+
   </main>
 
   <footer>Com ❤️ Janaina Franquis</footer>
